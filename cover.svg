@@ -1,0 +1,46 @@
+<!-- 
+// copyright @2024 <chaishushan{AT}gmail.com>
+// https://github.com/chai2010/gopl-notes-zh
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 660">
+
+<!-- 背景 -->
+<rect x="0" y="0" width="520" height="660" style="fill:white;stroke:none;"/>
+
+<!-- 外边框 -->
+<polyline points="1,1 519,1 519,659 1,659 1,1" style="fill:none;stroke:black;stroke-width:1"/>
+
+<!-- 顶部横条 -->
+<rect x="50" y="1" width="420" height="10" style="fill:#00acd7;stroke:none;"/>
+
+<!-- 系列图书 -->
+<text x="186" y="38" fill="black" font-style="italic" font-size="20px">Go语言进阶系列</text>
+
+<!-- 标题横条 -->
+<rect x="50" y="80" width="420" height="150" style="fill:#00acd7;stroke:none;"/>
+
+<!-- 主标题 -->
+<text x="60" y="180" fill="white" font-size="54px" font-weight="bold">Go圣经读书笔记</text>
+
+<!-- 副标题 -->
+<text x="130" y="270" fill="black" font-size="28px">Go圣经出版十年纪念</text>
+
+<!-- 出版社 -->
+<text x="40" y="620" fill="black" font-style="italic" font-size="20px">开源出版社</text>
+
+<!-- 作者 -->
+<text x="380" y="620" fill="black" font-style="italic" font-size="20px">柴树杉 著</text>
+
+<!-- 中间图像 -->
+<!--
+// 外部图像Chrome之间打开可以, 但是有些场景不能工作. 最终输出改成 Base64 内联.
+// base64 -i input-file -o output.txt
+
+<image x="150" y="320" width="220" height="220" href="images/icons/Visual_Studio_Code_1.35_icon.svg" />
+-->
+
+<image x="80" y="260" width="320" height="320" href="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEyNTAiIHZpZXdCb3g9IjE2LjggMTYuMSA3Mi45IDI3LjYiIHdpZHRoPSIyNTAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxzd2l0Y2g+PGcgZmlsbD0iIzAwYWNkNyI+PHBhdGggZD0ibTIyLjMgMjQuN2MtLjEgMC0uMi0uMS0uMS0uMmwuNy0xYy4xLS4xLjItLjIuNC0uMmgxMi42Yy4xIDAgLjIuMS4xLjJsLS42LjljLS4xLjEtLjIuMi0uNC4yem0tNS4zIDMuMmMtLjEgMC0uMi0uMS0uMS0uMmwuNy0xYy4xLS4xLjItLjIuNC0uMmgxNi4xYy4xIDAgLjIuMS4yLjJsLS4zIDFjMCAuMS0uMi4yLS4zLjJ6bTguNSAzLjNjLS4xIDAtLjItLjEtLjEtLjJsLjUtLjljLjEtLjEuMi0uMi40LS4yaDdjLjEgMCAuMi4xLjIuMmwtLjEuOGMwIC4xLS4xLjItLjIuMnptMzYuNi03LjItNS45IDEuNWMtLjUuMS0uNi4yLTEtLjQtLjUtLjYtLjktMS0xLjctMS4zLTIuMi0xLjEtNC40LS44LTYuNC41LTIuNCAxLjUtMy42IDMuOC0zLjYgNi43IDAgMi44IDIgNS4xIDQuOCA1LjUgMi40LjMgNC40LS41IDYtMi4zLjMtLjQuNi0uOCAxLTEuM2gtNi44Yy0uNyAwLS45LS41LS43LTEuMS41LTEuMSAxLjMtMi45IDEuOC0zLjguMS0uMi40LS42LjktLjZoMTIuOGMtLjEgMS0uMSAxLjktLjIgMi45LS40IDIuNS0xLjMgNC45LTIuOSA2LjktMi41IDMuMy01LjggNS40LTEwIDYtMy41LjUtNi43LS4yLTkuNS0yLjMtMi42LTItNC4xLTQuNi00LjUtNy44LS41LTMuOC43LTcuMyAzLTEwLjMgMi41LTMuMyA1LjgtNS40IDkuOS02LjEgMy4zLS42IDYuNS0uMiA5LjMgMS43IDEuOSAxLjIgMy4yIDIuOSA0LjEgNSAuMS40IDAgLjUtLjQuNnoiLz48cGF0aCBkPSJtNzMuNyA0My41Yy0zLjItLjEtNi4xLTEtOC42LTMuMS0yLjEtMS44LTMuNC00LjEtMy44LTYuOC0uNi00IC41LTcuNSAyLjktMTAuNiAyLjYtMy40IDUuNy01LjEgOS45LTUuOSAzLjYtLjYgNy0uMyAxMCAxLjggMi44IDEuOSA0LjUgNC41IDUgNy45LjYgNC44LS44IDguNi00IDExLjktMi4zIDIuNC01LjIgMy44LTguNCA0LjUtMS4xLjItMi4xLjItMyAuM3ptOC40LTE0LjJjMC0uNSAwLS44LS4xLTEuMi0uNi0zLjUtMy44LTUuNS03LjItNC43LTMuMy43LTUuNCAyLjgtNi4yIDYuMS0uNiAyLjcuNyA1LjUgMy4yIDYuNyAxLjkuOCAzLjkuNyA1LjctLjIgMi45LTEuNCA0LjQtMy43IDQuNi02Ljd6Ii8+PC9nPjwvc3dpdGNoPjwvc3ZnPg==
+" />
+
+</svg>

@@ -1,0 +1,11 @@
+[book]
+authors = ["chai2010"]
+description = ""
+language = "zh"
+src = "."
+title = "Go圣经读书笔记"
+
+[output.html]
+git-repository-icon = "fa-github"
+git-repository-url = "https://github.com/chai2010/gopl-notes-zh"
+edit-url-template = "https://github.com/chai2010/gopl-notes-zh/edit/master/testdata/{path}"
