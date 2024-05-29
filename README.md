@@ -2,4 +2,4 @@
 
 <img width="520px"  height="660px" src="cover.svg" />
 
-- 仓库地址: [https://github.com/chai2010/gopl-notes-zh](https://github.com/chai2010/gopl-notes-zh)
+- 开源大学堂: [Go圣经读书笔记](https://golang.beta.oscollege.net/os/gopl-notes-zh)
