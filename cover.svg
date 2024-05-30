@@ -27,7 +27,7 @@
 <text x="130" y="270" fill="black" font-size="28px">Go圣经出版十年纪念</text>
 
 <!-- 出版社 -->
-<text x="40" y="620" fill="black" font-style="italic" font-size="20px">开源出版社</text>
+<text x="40" y="620" fill="black" font-style="italic" font-size="20px">开源大学堂</text>
 
 <!-- 作者 -->
 <text x="380" y="620" fill="black" font-style="italic" font-size="20px">柴树杉 著</text>
