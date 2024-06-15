@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using https://github.com/wa-lang/mnbook -->
+        <meta charset="UTF-8">
+        <title>第1章 入门 - Go圣经读书笔记</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mnbook-theme');
+                var sidebar = localStorage.getItem('mnbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mnbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mnbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mnbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mnbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter">
+  <li class="chapter-item expanded ">
+    <a href="../index.html" >Go圣经读书笔记</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../preface.html" >前言</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../src/ch1.html" class="active"><strong aria-hidden="true">1.</strong> 第1章 入门</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../src/chapter_2.html" ><strong aria-hidden="true">2.</strong> Chapter 2</a>
+  </li>
+</ol>
+
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title"><a href="../index.html">Go圣经读书笔记</a></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/chai2010/gopl-notes-zh" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/chai2010/gopl-notes-zh/edit/master/testdata/src/ch1.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1>第1章 入门</h1>
+<p>在C语言版本的圣经第1章，包含的C语言的基本语言控制流、函数等特性，其中最复杂的例子是统计单词数（是一个简单版的<code>wc</code>程序）。而Go语言圣经第1章则包含了图像动画、请求网页内容和构建一个Web服务。当然第一例子必须是万年不变的“你好，世界”。</p>
+<h2>1.1 你好，世界</h2>
+<p>自从C语言圣经面世起，“你好世界”就成了大多数编程语言教程的第一个例子。Go圣经的作者之一正是同为C语言圣经的作者之一 Brian W. Kernighan，因此不存在抄袭或借鉴一说。</p>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func main() {
+    fmt.Println(&quot;Hello, 世界&quot;)
+}
+</code></pre>
+<p>作为一个老Gopher在10年后从新审视这个程序，似乎依然有一点点的陌生感觉。其中的<code>pacakge main</code>看起来有一点点的多余，其他部分的代码则从字面就能猜出个大概。当然，读者需要对UNIX那套黑话缩写有一点点了解，比如<code>fmt</code>可能表示format格式化的意思，比如<code>func</code>可能是function函数的缩写，再比如<code>Println</code>是什么鬼————哦，原来是Print+line的缩写。</p>
+<p>圣经原文不仅仅解释了包的概念，还引入了<code>goimports</code>等工具（我还是喜欢<code>go fmt ./...</code>）。总体而言1.1节才是真正的入门，该例子的真正目的是验证Go语言工具链可以正常工作。因此必须要在命令行成功通过<code>go</code>命令执行该程序才算功德圆满。</p>
+<p>该例子最好的体验是终于不需要处处写分号了。第一次看到部分不写分号的语言是JS，当然其中的规则也很魔幻。Go语言虽然基因里有分号，但是表象上分号的功能尽量让位于换行了。这一节没有习题，甚好！</p>
+<h2>1.2 命令行参数</h2>
+<p>在1.1的例子中，最难的不是理解程序，而是需要命令行完成编译和执行的全过程。对于不熟悉命令行环境的同学来说，“命令行”和“参数”这2个概念都是比较难以理解的。UNIX之父汤普森曾说进程有生命，而执行中的命令就是一个进程或生命，UNIX系统日常就是通过输入一行行的命令来执行或启动程序的：</p>
+<pre><code>$ cd
+$ ls
+$ pwd
+$ go
+</code></pre>
+<p>命令行自己也是一个程序，对应Windows下的cmd程序，或者是类UNIX下的某种Shell外壳子程序（比如常见的bash）。这些cmd或Shell大概类似于用户和操作系统核心的代理人，让命令行用户能够通过<code>cd</code>/<code>ls</code>/<code>pwd</code>/<code>go</code>这些命令的名字来启动对应的程序。等等，这么命令的名字是什么鬼？名字是计算机世界的重要概念，和日常世界意义我们通过给某种对象或程序取个阿猫阿狗的名字。比如<code>cd</code>可能是change directory的缩写表示切换当前目录（目前就行游戏世界中的地图），比如<code>ls</code>可能是list files的缩写表示列出当前目录房间的物品（当然不包含还没有打开的箱子），比如<code>pwd</code>可能是print work directory的缩写（表示查看出当前房间的名字）。特别是这些命令在Windows命令行可能还有不同的名字，当然最后一个<code>go</code>是表示Go语言的编译器命令在所有平台都是一样的。</p>
+<p>进程或者是命令既然有生命，那么外界怎么样和它沟通呢？先不考虑一问一答这种交互式的对话，如何一次性地获得外界的信号是很多程序关心的。比如命令行参数就是UNIX的一个发明，甚至已经成了固化到C语言的main函数的基因。此外还有读取操作系统的环境变量、读取特定路径下配置文件，读取操作系统的注册表等。看看C语言的main函数：</p>
+<pre><code class="language-c">int main(int argc, char *argv[]) {
+    return 0;
+}
+</code></pre>
+<p>其中main函数的输入参数就是对于命令行的参数，比如 <code>go run main.go</code>命令有3个单词，对应的<code>argc</code>为3、对应的argv就是3个单词的字符串。C语言main函数的返回值对应进程的返回值。换成Go语言版本的模拟如下：</p>
+<pre><code class="language-go">func main(args []string) int {
+    return 0
+}
+</code></pre>
+<p>但是这个main函数到底是谁来负责调用，其参数是怎么从命令行的参数转化为了程序中的参数的？这是一个根本性的大问题，直击进程的生老病死周期，当然这些工作命令行程序和命令程序通过紧密无间的配合帮我们处理好了。既然都处理好了，看看Go语言又怎么继续简化的：</p>
+<pre><code class="language-go">// C程序的main函数, 是进程的入口函数
+int main(int argc, char *argv[]) {
+    // 填充同一个进程/程序内的，Go语言定义的 os_Args 全局变量
+    // 然后调用 Go 语言的 main 函数
+    return 0;
+}
+
+// os 包定义的 Args 字符串列表
+var os.Args []string
+
+// Go语言的main函数，并不是进程执行的第一个入口函数
+// 前面还有很多准备工作和很多 init 函数被执行
+func main() {
+    fmt.Println(os.Args)
+}
+</code></pre>
+<p>既然<code>os.Args</code>就表示命令行参数，该节的全部内容都是围绕该变量处理。因为它是表示命令行参数的字符串列表，对应Go语言的字符串切片。因此又衍生出围绕切换的循环处理。第一个实现最具代表性：</p>
+<pre><code class="language-go">// Echo1 prints its command-line arguments.
+package main
+
+import (
+    &quot;fmt&quot;
+    &quot;os&quot;
+)
+
+func main() {
+    var s, sep string
+    for i := 1; i &lt; len(os.Args); i++ {
+        s += sep + os.Args[i]
+        sep = &quot; &quot;
+    }
+    fmt.Println(s)
+}
+</code></pre>
+<p>细节不做展开，简单说说其中的len函数设计哲学。内置的len函数计算切片、数组、map等元素的个数，有点泛型函数的意思。在有效语言中，会通过<code>.size()</code>类似的方法来实现类似的功能。Go语言设计的一个约定和C语言差不多，内置的基础类型就是纯数据没有方法，对于一些共性的操作通过全局的内置函数实现，有点“数据+函数=程序”的意思。当然，Go对于自己定义的新类型是可以定义方法的，当然方法自然有了隐含上下空间的意思，让用户博闻强记住每个不同上下文空间的方法可不是个好的思路。</p>
+<p>本节虽然有3个练习题，但是这里依然不想给出答案。一个建议是大家可以尝试将上述的程序，根据不同的习题要求重新封装为相对通用的函数，看看能否自己实现那些看起来更加傻瓜又强大的辅助函数。简言之，从上面的程序中能够找出多少构建<code>strings.Join</code>函数需要的材料？</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../preface.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                        
+                            <!-- ../src/chapter_2.html -->
+                            <a rel="next" href="../src/chapter_2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../preface.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                
+                    <a rel="next" href="../src/chapter_2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
