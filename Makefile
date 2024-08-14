@@ -1,18 +1,18 @@
-# go install github.com/wa-lang/mnbook@latest
+# go install github.com/wa-lang/wabook@latest
 
 default:
 	-@make clean
-	mnbook serve
+	wabook serve
 
 build:
 	-rm book
-	mnbook build
+	wabook build
 	-rm book/.gitignore
 	-rm -rf book/.git
 
 deploy:
 	-@make clean
-	mnbook build
+	wabook build
 	-rm book/.gitignore
 	-rm -rf book/.git
 	-rm -rf book/examples
